@@ -1,4 +1,5 @@
 <?php
+if ($_POST){
   require_once 'db.php';
   $nombre =   $_POST["nombre"];
   $tel =  $_POST["tel"];
@@ -7,4 +8,8 @@
   $sql = "INSERT INTO `landig` (`id`, `nombre`, `correo`, `tel`) VALUES (NULL, '$nombre', '$correo', '$tel')";
   $resultado = $db->ejecutar_idu($sql);
   header('Location: ../');
+}else{
+  echo 'Estás en una Zona porhibida.';
+}
+
  ?>
